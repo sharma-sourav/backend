@@ -8,6 +8,7 @@ import { EmployeModule } from './employe/employeentity/employe.module';
 import { Employe } from './employe/employeentity/employe.entity';
 import { UploadModule } from './upload/upload.module';
 import { ConfigModule } from '@nestjs/config';
+import { UploadService } from './upload/upload.service';
 
 
 
@@ -24,6 +25,6 @@ import { ConfigModule } from '@nestjs/config';
     synchronize:true  
   }), UserModule,EmployeModule, UploadModule,ConfigModule.forRoot({isGlobal:true})],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService,UploadService],
 })
 export class AppModule {}
