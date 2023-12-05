@@ -28,5 +28,7 @@ export class Employe {
   
   @Column({ default: 'Unknown'})
   imglink: string;
+
+ 
   
 }

@@ -8,7 +8,6 @@ import { EmployeModule } from './employe/employeentity/employe.module';
 import { Employe } from './employe/employeentity/employe.entity';
 import { UploadModule } from './upload/upload.module';
 import { ConfigModule } from '@nestjs/config';
-import { UploadService } from './upload/upload.service';
 
 
 
@@ -16,7 +15,7 @@ import { UploadService } from './upload/upload.service';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type:'mysql',
-    host:'localhost',
+    host:'localhost'||"127.0.0.1" ,
     port:3306,
     username:'root',
     password:'sourav123',
@@ -25,6 +24,6 @@ import { UploadService } from './upload/upload.service';
     synchronize:true  
   }), UserModule,EmployeModule, UploadModule,ConfigModule.forRoot({isGlobal:true})],
   controllers: [AppController],
-  providers: [AppService,UploadService],
+  providers: [AppService],
 })
 export class AppModule {}
