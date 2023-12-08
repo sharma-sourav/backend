@@ -15,10 +15,10 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type:'mysql',
-    host:'localhost' ,
+    host:'nest-rest-api-database.co7kilirejkj.ap-south-1.rds.amazonaws.com' ,
     port:3306,
-    username:'root',
-    password:'sourav123',
+    username:'nestjsadmin',
+    password:'sourav$123',
     database:'usersignup',
     entities:[Users,Employe],
     synchronize:true  
